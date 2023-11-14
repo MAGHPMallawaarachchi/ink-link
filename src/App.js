@@ -4,12 +4,13 @@ import About from './pages/About';
 import Article from './pages/Article';
 import ArticlesList from './pages/ArticlesList';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <h1>Ink Link</h1>
+        <Navbar/>
         <div>
           <Routes>
             <Route path="/home" element={<Home />} />
