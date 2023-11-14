@@ -1,10 +1,12 @@
 import { useParams } from "react-router-dom";
 import articles from "../constants/article-content";
+import NotFound from "./NotFound";
 
 const Article = () => {
     const { articleId } = useParams();
     const article = articles.find(article => article.name === articleId);
-    if (!article) return <h1>Article does not exist!</h1>;
+    
+    if (!article) return <NotFound/>;
 
     return (
         <div className="max-w-[720px] m-auto flex flex-col items-start py-10">

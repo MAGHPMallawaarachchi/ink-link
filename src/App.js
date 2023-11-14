@@ -5,6 +5,7 @@ import Article from './pages/Article';
 import ArticlesList from './pages/ArticlesList';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/articles" element={<ArticlesList />} />
             <Route path="/articles/:articleId" element={<Article />} />
+            <Route path="*" element={<NotFound/>} />
           </Routes>
         </div>
       </div>
