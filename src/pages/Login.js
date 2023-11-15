@@ -23,7 +23,7 @@ const Login = () => {
         <div className="flex flex-col items-center max-w-[720px] m-auto py-10">
             <h1 className="pb-6 text-3xl font-bold">Login</h1>
             
-            {error && <p className='font-medium text-red-500'>{error}</p>}
+            {error && <p className='mb-2 font-medium text-red-500'>{error}</p>}
 
             <div className='flex flex-col gap-4'>
                 <div>

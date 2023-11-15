@@ -6,10 +6,13 @@ import axios from "axios";
 import CommentsList from "../components/CommentsList";
 import { FaHeart } from "react-icons/fa";
 import AddCommentForm from "../components/AddCommentForm";
+import useUser from "../hooks/useUser";
 
 const Article = () => {
     const [articleInfo, setArticleInfo] = useState({ upvotes: 0, comments: [] });
     const { articleId } = useParams();
+
+    const { user, isLoading } = useUser();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -33,8 +36,11 @@ const Article = () => {
     return (
         <div className="max-w-[720px] m-auto flex flex-col items-start py-10">
             <h1 className="pb-6 text-3xl font-bold">{article.title}</h1>
-            <div className="flex flex-row gap-1 mb-4">
-                <button onClick={addUpvote}><FaHeart/></button>
+            <div className="flex flex-row items-center gap-1 mb-4">
+                {user
+                    ? <button onClick={addUpvote}><FaHeart/></button>
+                    : <FaHeart/>
+                }
                 <h4 className="text-lg font-bold">{articleInfo.upvotes}</h4>
             </div>
             {
