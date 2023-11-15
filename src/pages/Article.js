@@ -5,6 +5,7 @@ import NotFound from "./NotFound";
 import axios from "axios";
 import CommentsList from "../components/CommentsList";
 import { FaHeart } from "react-icons/fa";
+import AddCommentForm from "../components/AddCommentForm";
 
 const Article = () => {
     const [articleInfo, setArticleInfo] = useState({ upvotes: 0, comments: [] });
@@ -42,6 +43,8 @@ const Article = () => {
                 ))
             }
             <div className="h-8"></div>
+            <AddCommentForm articleName={articleId} onArticleUpdated={updatedArticle => setArticleInfo(updatedArticle)}/>
+            <div className="h-6"></div>
             <CommentsList comments={articleInfo.comments}/>
         </div>
     );
