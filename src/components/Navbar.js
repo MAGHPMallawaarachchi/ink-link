@@ -2,15 +2,15 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return(
-        <nav class="border-b-4 border-black">
-            <ul class='flex items-center justify-center text-base font-bold'>
-                <li class="hover:bg-black hover:text-white w-28 h-10 flex items-center justify-center">
+        <nav className="border-b-4 border-black">
+            <ul className='flex items-center justify-center text-base font-bold'>
+                <li className="flex items-center justify-center h-10 hover:bg-black hover:text-white w-28">
                     <Link to="/">Home</Link>
                 </li>
-                <li  class="hover:bg-black hover:text-white w-28 h-10 flex items-center justify-center">
+                <li  className="flex items-center justify-center h-10 hover:bg-black hover:text-white w-28">
                     <Link to="/about">About</Link>
                 </li>
-                <li class="hover:bg-black hover:text-white w-28 h-10 flex items-center justify-center">
+                <li className="flex items-center justify-center h-10 hover:bg-black hover:text-white w-28">
                     <Link to="/articles">Articles</Link>
                 </li>
             </ul>
